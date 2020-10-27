@@ -1,3 +1,6 @@
+
+//yksinkertainen puu
+
 public class SimpleBinarySearchTree {
     class Node {
         int key;
