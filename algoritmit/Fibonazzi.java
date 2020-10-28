@@ -1,7 +1,7 @@
 public class Fibonazzi {
 
     private int[] memo = new int[1001];
-
+    // luo fibonazzin
     public int fib(int n) {
         System.out.println("n = " + n);
         if (n <= 0) {

@@ -13,8 +13,10 @@ public class IntReverse {
 
 
         while (x >= 1) {
+            // viimeinen numero
             int lastDigit = x % 10;
             reverse = reverse * 10 + lastDigit;
+            // poistetaan viimeinen numero
             x /= 10;
         }
 
