@@ -1,7 +1,7 @@
 
 
 public class StringReverse {
-
+    // reverse StringBuilderilla
     public String withSBuilder(String teksti) {
         StringBuilder sb = new StringBuilder(teksti);
         sb.reverse();
@@ -12,7 +12,7 @@ public class StringReverse {
 
 
     public String stringReverser(String teksti) {
-
+    // reverse vaihtamalla merkkien paikkaa
 
         char[] merkit = teksti.toCharArray();
 
