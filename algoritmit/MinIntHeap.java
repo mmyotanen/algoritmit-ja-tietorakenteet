@@ -34,49 +34,49 @@ public class MinIntHeap {
 
     public int extractMin() {
         if (size == 0) throw new IllegalStateException();
-        int item = items[0];        // grab the min
-        items[0] = items[size - 1]; // copy to the bottom
+        int item = items[0];
+        items[0] = items[size - 1];
         size--;
-        heapifyDown();              // heapify
+        heapifyDown();
         return item;
     }
 
     public void add(int item) {
         ensureCapactity();
-        items[size] = item;          // put in last spot
+        items[size] = item;
         size++;
         heapifyUp();
     }
 
     public void heapifyUp() {
-        int index = size - 1;       // start at last element
+        int index = size - 1;
         while (hasParent(index) && parent(index) > items[index]) {  // walk up as long as there is a parent and it is bigger than you
             swap(parentIndex(index), index);
-            index = parentIndex(index); // walk upwards to next node
+            index = parentIndex(index);
         }
     }
 
     public void heapifyDown() {
-        int index = 0;              // starting at the top
-        while (hasLeftChild(index)) {  // as long as I have children Note: Only need to check left because if no left, there is no right
+        int index = 0;
+        while (hasLeftChild(index)) {
 
-            // pick a direction, and get the smaller of the two indexes
+
             int smallerChildIndex = leftChildIndex(index);
             if (hasRightChild(index) && rightChild(index) < leftChild(index)) {
-                // swap right (because we are min heap)
+
                 smallerChildIndex = rightChildIndex(index);
             }
 
-            // Now compare
 
-            // if I am smaller than the items of my two children...then everything is good. I am sorted.
+
+
             if(items[index] < items[smallerChildIndex]) {
                 break;
-            } else { //  we are still not in order
-                swap(index, smallerChildIndex);         // so swap with the smaller child
+            } else {
+                swap(index, smallerChildIndex);
             }
 
-            index = smallerChildIndex;              // then move down to smaller child
+            index = smallerChildIndex;
         }
     }
 
